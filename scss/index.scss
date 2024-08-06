@@ -5,13 +5,15 @@ header{
   position: fixed;
   left: 0;
   right: 0;
-  animation: headerIn 2s forwards;
+  animation: headerIn 1.5s forwards;
   li{
     list-style: none;
+    text-align: center;
+    padding: 10px;
     a{
       text-decoration: none;
       color: #333;
-      padding: 10px 32px;
+      padding: 0px 32px;
       font-size: 1.4rem;
       position: relative;
       &::after{
@@ -21,7 +23,7 @@ header{
         height: 1px;
         background-color: #333;
         position: absolute;
-        bottom: 2px;
+        bottom: -4px;
         left: 10%;
         transform: scale(0,1);
         transition: all 0.3s;
@@ -41,37 +43,7 @@ header{
     ul{
       display: flex;
       align-items: center;
-      height: 64px;
-      li{
-        list-style: none;
-        text-align: center;
-        a{
-          text-decoration: none;
-          color: #333;
-          padding: 10px 32px;
-          font-size: 1.4rem;
-          position: relative;
-          &::after{
-            content: '';
-            display: block;
-            width: 80%;
-            height: 1px;
-            background-color: #333;
-            position: absolute;
-            bottom: 2px;
-            left: 10%;
-            transform: scale(0,1);
-            transition: all 0.3s;
-          }
-        }
-        &:hover{
-          a{
-            &::after{
-              transform: scale(1,1);
-            }
-          }
-        }
-      }
+      height: 80px;
     }
   }
   #m-nav{
@@ -79,7 +51,7 @@ header{
     height: 100vh;
     opacity: 0;
     top: 0;
-    z-index: -1;
+    z-index: -999;
     background-color: rgba(255,255,255,0.95);
     backdrop-filter: blur(10px);
     transition: all .3s;
@@ -90,22 +62,10 @@ header{
       top: 50%;
       left: 50%;
       transform: translate(-50%,-50%);
-      li{
-        list-style: none;
-        text-align: center;
-        a{
-          display: block;
-          padding: 10px;
-          text-decoration: none;
-          color: #333;
-          font-size: 1.4rem;
-        }
-      }
     }
   }
   #m-nav.m-nav-open{
     opacity: 1;
-    z-index: 999;
     ul{
       display: block;
     }
@@ -185,9 +145,9 @@ header{
     max-width: 1440px;
     position: relative;
     svg{
-      max-width: 1000px;
+      max-width: 1440px;
       min-width: 240px;
-      margin-top: 150px;
+      margin-top: 240px;
       path{
         fill: #000;
         fill-opacity: 0;
@@ -244,8 +204,33 @@ header{
   }
 }
 
+section{
+  max-width: 1120px;
+  min-width: 300px;
+  margin: 120px auto 0px;
+  padding: 20px;
+  .head2{
+    font-size: clamp(1.8rem, 1.4rem + 2vw, 3.2rem);
+  }
+}
 
 // #Profile
+.profile-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px 10px;
+  img{
+    margin-right: 75px;
+  }
+  .profile-content{
+    h3{
+      font-size: 2.4rem;
+    }
+    .profile-text{
+      font-size: 1.6rem;
+    }
+  }
+}
 
 
 // #Works
