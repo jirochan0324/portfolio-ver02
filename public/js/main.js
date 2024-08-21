@@ -15,3 +15,16 @@ menuActive.addEventListener('click',()=>{
     })
 });
 
+// スクロールイベント
+window.addEventListener('scroll',()=>{
+    const scroll = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const sections = document.querySelectorAll('.fadein-section');
+
+    sections.forEach(function(fadein){
+        const distanceToSection = fadein.offsetTop;
+        if(scroll + windowHeight > distanceToSection){
+            fadein.classList.add('fadein-active');
+        }
+    })
+})

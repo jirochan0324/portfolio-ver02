@@ -286,10 +286,10 @@ html, body {
 body {
   width: 100%;
   height: 100%;
-  font-family: "Noto Serif JP", "clone-rounded-latin", sans-serif;
-  font-optical-sizing: auto;
+  font-family: "Noto Sans JP", "Noto Serif JP", "clone-rounded-latin", sans-serif;
   font-style: normal;
   color: #333;
+  background-color: rgba(250, 250, 250, 0.9);
   animation: fadein 3s forwards;
 }
 
