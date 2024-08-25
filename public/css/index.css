@@ -555,38 +555,45 @@ section .head2 {
 
 #work .works-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 32px;
 }
 #work .works-list .work {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 10px;
-  background-color: white;
-  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.02);
-  transition: ease 0.2s;
 }
 #work .works-list .work .work-link {
   width: 100%;
   height: 100%;
-  text-align: center;
   text-decoration: none;
   padding: 20px;
 }
-#work .works-list .work .work-link .work-img {
-  max-height: 320px;
+#work .works-list .work .work-link .work-img-wrap {
+  width: 100%;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+}
+#work .works-list .work .work-link .work-img-wrap .work-img {
+  width: 100%;
+  transition: ease 0.5s;
 }
 #work .works-list .work .work-link .work-info {
   font-size: 1.4rem;
-  color: #333;
 }
 #work .works-list .work .work-link .work-info .work-category {
   font-size: 1.4rem;
   letter-spacing: 0.05em;
+  line-height: 2.5;
+  color: #7f7f7f;
 }
 #work .works-list .work .work-link .work-info .work-name {
   font-size: 1.6rem;
+  font-weight: 500;
+  color: #333;
+}
+#work .works-list .work:hover .work-link .work-img {
+  transform: scale(1.4);
 }
 
 #skill .head-skill {
@@ -635,7 +642,7 @@ section .head2 {
 }
 #skill .tool-wrap .tool-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(560px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 32px;
   list-style: none;
 }
