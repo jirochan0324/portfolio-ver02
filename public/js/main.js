@@ -15,6 +15,10 @@ menuActive.addEventListener('click',()=>{
     })
 });
 
+// ページトップ
+
+
+
 // dade-in スクロールイベント
 window.addEventListener('scroll',()=>{
     const scroll = window.scrollY;
