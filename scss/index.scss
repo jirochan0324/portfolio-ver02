@@ -41,13 +41,27 @@ header{
   #g-nav{
     overflow-x: hidden;
     position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
+    height: 80px;
+    .logo-img{
+      height: 80px;
+      margin-right: auto;
+      margin-left: 60px;
+      img{
+        display: block;
+        width: 100%;
+        height: 80px;
+      }
+    }
     ul{
+      height: 100%;
       display: flex;
       justify-content: flex-end;
       align-items: center;
       list-style: none;
-      height: 80px;
     }
   }
   #m-nav{
@@ -154,13 +168,16 @@ header{
   padding: 0px 10%;
   position: relative;
   .fv-container{
-    position: relative;
-    transform: translateY(320px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: -10;
-    max-width: 1440px;
+    max-width: 1140px;
+    min-width: 240px;
+    width: 100%;
     svg{
-      max-width: 1440px;
-      min-width: 240px;
+      width: 100%;
       path{
         fill: #000;
         fill-opacity: 0;
@@ -350,7 +367,6 @@ section{
       box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.02);
       .skill-icon{
         width: 64px;
-        height: 100%;
       }
       h3{
         font-size: 1.8rem;
@@ -407,12 +423,12 @@ section{
         }
         &:nth-of-type(3){
           h4{
-            color: #f641c8;
+            color: #7c4dff;
           }
         }
         &:nth-of-type(4){
           h4{
-            color: #7c4dff;
+            color: #f641c8;
           }
         }
 
@@ -626,6 +642,14 @@ section{
       .profile-content{
         order: 2;
       }
+    }
+  }
+}
+
+@media (max-width: 428px){
+  .fv-wrap{
+    .fv-container{
+      max-width: 320px;
     }
   }
 }

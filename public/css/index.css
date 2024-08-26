@@ -339,14 +339,28 @@ header li:hover a::after {
 header #g-nav {
   overflow-x: hidden;
   position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
+  height: 80px;
+}
+header #g-nav .logo-img {
+  height: 80px;
+  margin-right: auto;
+  margin-left: 60px;
+}
+header #g-nav .logo-img img {
+  display: block;
+  width: 100%;
+  height: 80px;
 }
 header #g-nav ul {
+  height: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   list-style: none;
-  height: 80px;
 }
 header #m-nav {
   overflow-y: hidden;
@@ -446,14 +460,17 @@ header #m-nav.m-nav-open ul {
   position: relative;
 }
 .fv-wrap .fv-container {
-  position: relative;
-  transform: translateY(320px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: -10;
-  max-width: 1440px;
+  max-width: 1140px;
+  min-width: 240px;
+  width: 100%;
 }
 .fv-wrap .fv-container svg {
-  max-width: 1440px;
-  min-width: 240px;
+  width: 100%;
 }
 .fv-wrap .fv-container svg path {
   fill: #000;
@@ -626,7 +643,6 @@ section .head2 {
 }
 #skill .skill-wrap li .skill-icon {
   width: 64px;
-  height: 100%;
 }
 #skill .skill-wrap li h3 {
   font-size: 1.8rem;
@@ -677,10 +693,10 @@ section .head2 {
   color: #f55723;
 }
 #skill .tool-wrap .tool-container li:nth-of-type(3) h4 {
-  color: #f641c8;
+  color: #7c4dff;
 }
 #skill .tool-wrap .tool-container li:nth-of-type(4) h4 {
-  color: #7c4dff;
+  color: #f641c8;
 }
 #skill .tool-wrap .tool-container.coding-tool-wrap li:nth-of-type(1) h4 {
   color: #2877bd;
@@ -856,5 +872,10 @@ section .head2 {
   }
   #profile .profile-wrap .profile-content {
     order: 2;
+  }
+}
+@media (max-width: 428px) {
+  .fv-wrap .fv-container {
+    max-width: 320px;
   }
 }/*# sourceMappingURL=index.css.map */
