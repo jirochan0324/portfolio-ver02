@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/index.css">
   <title>Jiro's Portfolio</title>
 </head>
@@ -41,7 +42,7 @@
   </div>
 
   <div class="fv-wrap">
-    <div class="fv-container">
+    <div class="fv-container job-container">
       <svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
       y="0px" viewBox="0 0 1588.9 241.9" style="enable-background:new 0 0 1588.9 241.9;" xml:space="preserve">
      <path d="M143.9,79.1c-7,48-10.5,88-10.5,120.5c0,3.8,0,8.2,0.2,13.8c0.2,5.2,0.5,8.2,0.5,9.2c-1.2,5.8-4,9-8,10
@@ -105,8 +106,8 @@
        c-11.5,7.8-20.8,17-27.8,27.5c-7.5,11.5-11,21.8-11,30.8c0,17.5,6.8,31.5,20.2,42c12,10,26.8,14.8,44,14.8c17,0,31.2-5.8,42.8-17.5
        c11-11.5,16.8-26.5,16.8-44.5C1564.8,116.1,1560.8,100.4,1552.8,89.1z"/>
       </svg>
-      <div class="fv-job-wrap">
-        <p class="fv-job fv-fadein-bg">Web Designer</p>
+      <div class="fv-job-wrap job-bg">
+        <p class="fv-job">Web Designer</p>
       </div>
     </div>
     <div class="scroll-wrap">
@@ -119,7 +120,7 @@
     <section  id="work">
       <h2 class="head2">WORK</h2>
       <ul class="works-list">
-        <li class="work">
+        <li class="work" data-aos="zoom-in" data-aos-delay="200">
           <a href="works-portfolio.html" class="work-link">
             <div class="work-img-wrap">
               <img src="img/work-img-sumnail/portfolio.jpg" alt="制作実績の画像" class="work-img">
@@ -131,7 +132,7 @@
           </a>
         </li>
 
-        <li class="work">
+        <li class="work" data-aos="zoom-in" data-aos-delay="400">
           <a href="works-cw4.html" class="work-link">
             <div class="work-img-wrap">
               <img src="img/work-img-sumnail/numadu-app.jpg" alt="制作実績の画像" class="work-img">
@@ -143,7 +144,7 @@
           </a>
         </li>
 
-        <li class="work">
+        <li class="work" data-aos="zoom-in" data-aos-delay="600">
           <a href="works-bebemart.html" class="work-link">
             <div class="work-img-wrap">
               <img src="img/work-img-sumnail/bebe-app.jpg" alt="制作実績の画像" class="work-img">
@@ -155,7 +156,7 @@
           </a>
         </li>
 
-        <li class="work">
+        <li class="work" data-aos="zoom-in" data-aos-delay="800">
           <a href="works-dailyui.html" class="work-link">
             <div class="work-img-wrap">
               <img src="img/work-img-sumnail/training.jpg" alt="制作実績の画像" class="work-img">
@@ -167,7 +168,7 @@
           </a>
         </li>
 
-        <li class="work">
+        <li class="work" data-aos="zoom-in" data-aos-delay="1000">
           <a href="works-card01.html" class="work-link">
             <div class="work-img-wrap">
               <img src="img/work-img-sumnail/card-cat.jpg" alt="制作実績の画像" class="work-img">
@@ -179,7 +180,7 @@
           </a>
         </li>
 
-        <li class="work">
+        <li class="work" data-aos="zoom-in" data-aos-delay="1200">
           <a href="works-poster.html" class="work-link">
             <div class="work-img-wrap">
               <img src="img/work-img-sumnail/poster.jpg" alt="制作実績の画像" class="work-img">
@@ -196,7 +197,7 @@
     <section class="fadein-section" id="skill">
       <h2 class="head2 head-skill">SKILL</h2>
       <ul  class="skill-wrap">
-        <li>
+        <li data-aos="zoom-in" data-aos-delay="200">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="skill-icon"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
           <h3>コーディング</h3>
           <p>
@@ -205,7 +206,7 @@
             現在はレスポンシブに対応できるWEBサイトのコーディングやJavaScriptを使用してよりWEBサイトにアニメーションを実装できるようにスキル向上に努めています。
           </p>
         </li>
-        <li>
+        <li data-aos="zoom-in" data-aos-delay="400">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="skill-icon"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 0C28.7 0 0 28.7 0 64L0 352c0 35.3 28.7 64 64 64l176 0-10.7 32L160 448c-17.7 0-32 14.3-32 32s14.3 32 32 32l256 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-69.3 0L336 416l176 0c35.3 0 64-28.7 64-64l0-288c0-35.3-28.7-64-64-64L64 0zM512 64l0 224L64 288 64 64l448 0z"/></svg>
           <h3>デザイン</h3>
           <p>
@@ -214,7 +215,7 @@
             現在も、自主制作でWEBサイトやバナーのデザインを行い、スキル向上に努めています。
           </p>
         </li>
-        <li>
+        <li data-aos="zoom-in" data-aos-delay="600">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="skill-icon"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 125.7-86.8 86.8c-10.3 10.3-17.5 23.1-21 37.2l-18.7 74.9c-2.3 9.2-1.8 18.8 1.3 27.5L64 512c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128zM549.8 235.7l14.4 14.4c15.6 15.6 15.6 40.9 0 56.6l-29.4 29.4-71-71 29.4-29.4c15.6-15.6 40.9-15.6 56.6 0zM311.9 417L441.1 287.8l71 71L382.9 487.9c-4.1 4.1-9.2 7-14.9 8.4l-60.1 15c-5.5 1.4-11.2-.2-15.2-4.2s-5.6-9.7-4.2-15.2l15-60.1c1.4-5.6 4.3-10.8 8.4-14.9z"/></svg>
           <h3>グラフィック</h3>
           <p>Illustratorを使用して名刺、ポスター、フライヤー、ロゴデザインなどを制作しています。<br>
@@ -222,9 +223,9 @@
         </li>
       </ul>
 
-      <div class="tool-wrap">
+      <div class="tool-wrap" >
         <h3>Coding</h3>
-        <ul  class="tool-container coding-tool-wrap">
+        <ul  class="tool-container coding-tool-wrap" data-aos="zoom-in" data-aos-delay="200">
           <li>
             <div class="skill-icon">
               <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
@@ -252,7 +253,7 @@
 
       <div class="tool-wrap">
         <h3>Design</h3>
-        <ul class="tool-container">
+        <ul class="tool-container" data-aos="zoom-in" data-aos-delay="200">
           <li>
             <div class="skill-icon">
               <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
@@ -297,7 +298,7 @@
         </ul>
       </div>
 
-      <div class="usage-experience-wrap">
+      <div class="usage-experience-wrap" >
         <h3>other-tool</h3>
         <ul>
           <li>
@@ -356,6 +357,8 @@
     <p class="footer-text">&copy; <script>document.write(new Date().getFullYear());</script> - Jiro's Portfolio</p>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/aos-custam.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

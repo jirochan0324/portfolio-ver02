@@ -352,7 +352,6 @@ header #g-nav .logo-img {
 }
 header #g-nav .logo-img img {
   display: block;
-  width: 100%;
   height: 80px;
 }
 header #g-nav ul {
@@ -481,29 +480,36 @@ header #m-nav.m-nav-open ul {
   stroke-dashoffset: 1000;
   animation: 2s ease-in forwards 0.5s textAnimation;
 }
-.fv-wrap .fv-container .fv-job-wrap .fv-fadein-bg {
+.fv-wrap .fv-container.job-container {
   position: relative;
 }
-.fv-wrap .fv-container .fv-job-wrap .fv-fadein-bg::before {
+.fv-wrap .fv-container.job-container .fv-job-wrap {
+  overflow: hidden;
   position: absolute;
-  top: 0;
-  display: block;
-  content: " ";
-  width: 100%;
-  height: 100%;
-  background-color: #333;
-  transform-origin: right;
-  animation-name: fv-fadein-bg;
+  bottom: -75px;
+  right: 0;
+  font-size: clamp(2rem, 1.286rem + 3.57vw, 4.5rem);
+}
+.fv-wrap .fv-container.job-container .fv-job-wrap .fv-job {
+  animation-name: fv-job-fadein;
   animation-duration: 1s;
   animation-delay: 1s;
   animation-fill-mode: forwards;
   opacity: 0;
 }
-.fv-wrap .fv-container .fv-job-wrap .fv-fadein-bg.fv-job {
+.fv-wrap .fv-container.job-container .fv-job-wrap .fv-job-wrap.job-bg {
+  position: relative;
+}
+.fv-wrap .fv-container.job-container .fv-job-wrap .fv-job-wrap.job-bg .fv-job::before {
   position: absolute;
-  bottom: -75px;
-  right: 0;
-  font-size: clamp(2rem, 1.286rem + 3.57vw, 4.5rem);
+  top: 0;
+  bottom: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 80px;
+  border: solid;
+  background-color: #333;
 }
 .fv-wrap .scroll-wrap {
   height: 100%;
@@ -536,6 +542,15 @@ header #m-nav.m-nav-open ul {
   100% {
     transform-origin: right;
     transform: scaleX(0);
+    opacity: 1;
+  }
+}
+@keyframes fv-job-fadein {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }
@@ -594,7 +609,6 @@ section .head2 {
 }
 #work .works-list .work .work-link .work-img-wrap {
   width: 100%;
-  height: 240px;
   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.02);
   overflow: hidden;
 }
