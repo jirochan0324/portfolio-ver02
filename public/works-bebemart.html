@@ -6,11 +6,11 @@
     <link rel="icon" href="img/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="img/favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-    <link rel="icon" href="img/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">
     <link rel="stylesheet" href="css/works-temp.css">
     <title>Jiro's Portfolio|Work</title>
   </head>
@@ -20,7 +20,7 @@
         <a href="index.html" class="logo-img"><img src="img/my-logo.png" alt="ロゴの画像"></a>
         <ul>
           <li><a href="about.html">About</a></li>
-          <li><a href="#work">Work</a></li>
+          <li><a href="index.html#work">Work</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -41,26 +41,29 @@
       <span></span>
     </div>
 
-    <div class="work">
+    <div id="work">
       <div class="work-wrap">
         <div class="work-img-wrap">
           <img src="img/work1/bebe-mart.png" alt="work01-img">
         </div>
-
-
         <div class="work-head">
-          <h1>デジタルスタンプラリーサイト&lpar;架空&rpar;</h1>
+          <h1>BeBe-Mart&lpar;架空&rpar;</h1>
           <p class="work-position">Design/Coding</p>
 
           <p class="work-explain">
-            このサイトは、静岡県沼津市を舞台とした架空のデジタルスタンプラリーイベントを体験するためサイトになっています。<br>
-            沼津市内を楽しく駆け巡り、グルメ・歴史・アクティビティを楽しみ、沼津市の魅力に多く触れることを目的として制作しました。
+            育児中の親をターゲットにした、育児道具専門の売買マーケットサイトです。<br>
+            このサイトでは対象の年齢を過ぎた育児道具を買い取ってもらったり、他の人が出品した商品を購入することができます。
           </p>
 
           <div class="work-body">
             <div class="work-body-content">
-              <dt class="work-body-head">内容</dt>
-              <dd class="work-body-item">授業内チーム制作</dd>
+              <dt class="work-body-head">課題</dt>
+              <dd class="work-body-item">「育児道具の使用期間に対しての出費が大きい」<br>
+                「使い終えた育児道具が場所をとっていてなんとかしたい」という問題を解決する</dd>
+            </div>
+            <div class="work-body-content">
+              <dt class="work-body-head">ターゲット</dt>
+              <dd class="work-body-item">0歳から3歳までの育児中の親</dd>
             </div>
             <div class="work-body-content">
               <dt class="work-body-head">制作期間</dt>
@@ -72,7 +75,7 @@
             </div>
             <div class="work-body-content">
               <dt class="work-body-head">使用言語</dt>
-              <dd class="work-body-item">HTML5 / CSS(SCSS) / JavaScript</dd>
+              <dd class="work-body-item">HTML5 / CSS / JavaScript</dd>
             </div>
 
             <div class="work-link-wrap">
@@ -80,6 +83,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
 
@@ -87,7 +91,7 @@
     <footer id="footer">
       <p class="footer-text">&copy; <script>document.write(new Date().getFullYear());</script> - Jiro's Portfolio</p>
     </footer>
-  
+
     <script src="js/main.js"></script>
   </body>
 </html>
