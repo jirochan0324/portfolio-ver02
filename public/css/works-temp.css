@@ -555,10 +555,6 @@ header #m-nav.m-nav-open ul {
 #work .work-wrap .work-head .work-body .work-link-wrap:hover a {
   color: #333;
 }
-#work .work-wrap .splide__slide img {
-  width: 100%;
-  height: auto;
-}
 
 #footer {
   margin-top: 100px;
