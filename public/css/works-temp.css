@@ -468,13 +468,13 @@ header #m-nav.m-nav-open ul {
   align-items: center;
 }
 #work .work-wrap .work-img-wrap {
-  width: 80%;
-  height: 720px;
+  border: 100%;
+  height: 480px;
 }
 #work .work-wrap .work-img-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 #work .work-wrap .work-head {
   width: 90%;

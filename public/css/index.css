@@ -651,9 +651,6 @@ section .head2 {
   transform: scale(1.25);
 }
 
-#skill .head-skill {
-  margin-top: 120px;
-}
 #skill .skill-wrap {
   list-style: none;
   display: grid;
