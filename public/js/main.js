@@ -15,7 +15,7 @@ menuActive.addEventListener('click',()=>{
     })
 });
 
-// dade-in スクロールイベント
+// fade-in スクロールイベント
 window.addEventListener('scroll',()=>{
     const scroll = window.scrollY;
     const windowHeight = window.innerHeight;
@@ -28,3 +28,4 @@ window.addEventListener('scroll',()=>{
         }
     })
 })
+

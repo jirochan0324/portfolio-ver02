@@ -453,47 +453,33 @@ header #m-nav.m-nav-open ul {
   width: 30%;
 }
 
-section {
-  max-width: 1220px;
-  min-width: 300px;
+#profile {
   margin: 90px auto 0px;
-  padding: 20px;
 }
-section .head2 {
+#profile .head2 {
   text-align: center;
   font-size: clamp(3rem, 2.273rem + 3.64vw, 5rem);
   letter-spacing: 0.05em;
 }
-
-.fadein-section {
-  opacity: 0;
-  visibility: hidden;
-  transition: all 2s ease;
-}
-
-.fadein-active {
-  opacity: 1;
-  visibility: visible;
-}
-
 #profile .profile-wrap {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  margin: 80px 0px 120px;
+  max-width: 1220px;
+  min-width: 300px;
+  margin: 80px auto 120px;
 }
 #profile .profile-wrap .profile-img-wrap {
-  transform: translateY(40px);
+  position: relative;
   display: block;
+  width: 100%;
+  max-width: 240px;
 }
 #profile .profile-wrap .profile-img-wrap .profile-img {
-  border-radius: 0px 10px 0px 10px;
   width: 100%;
-  max-width: 416px;
-  min-width: 200px;
-  height: auto;
-  box-shadow: 20px -20px #000;
-  margin-left: auto;
+}
+#profile .profile-wrap .profile-content {
+  text-align: center;
 }
 #profile .profile-wrap .profile-content .name {
   font-size: 3rem;
@@ -504,159 +490,71 @@ section .head2 {
   font-size: clamp(1rem, 0.491rem + 2.55vw, 2.4rem);
 }
 #profile .profile-wrap .profile-content .profile-text {
+  text-align: center;
   font-size: 1.6rem;
   line-height: 2;
   letter-spacing: 0.1em;
-  max-width: 560px;
+  max-width: 720px;
+  min-width: 320px;
 }
-
-#skill .head-skill {
-  margin-top: 120px;
+#profile .favorite-body {
+  background-color: rgba(255, 255, 255, 0.4);
 }
-#skill .skill-wrap {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
-  margin: 80px 0px 120px;
+#profile .favorite-body .head2 {
+  font-size: clamp(3rem, 2.273rem + 3.64vw, 5rem);
+  color: black;
 }
-#skill .skill-wrap li {
-  height: 480px;
-  padding: 40px 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  border-radius: 10px;
-  background-color: white;
-  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.02);
+#profile .favorite-body .img-list {
+  height: 1200px;
+  position: relative;
 }
-#skill .skill-wrap li .skill-icon {
-  width: 64px;
+#profile .favorite-body .img-list .img-wrap {
+  position: absolute;
 }
-#skill .skill-wrap li h3 {
-  font-size: 1.8rem;
-  letter-spacing: 0.1em;
-  text-align: center;
-  margin: 32px 0px;
-}
-#skill .skill-wrap li p {
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 2;
-  letter-spacing: 0.1em;
-}
-#skill .tool-wrap:not(:first-child) {
-  margin-top: 80px;
-}
-#skill .tool-wrap h3 {
-  font-size: clamp(2.4rem, 2.109rem + 1.45vw, 3.2rem);
-  margin: 10px 0px;
-}
-#skill .tool-wrap .tool-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 32px;
-  list-style: none;
-}
-#skill .tool-wrap .tool-container li {
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  background-color: white;
-  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.02);
-  padding: 20px;
-}
-#skill .tool-wrap .tool-container li h4 {
-  font-size: 1.6rem;
-  margin: 8px 0px;
-}
-#skill .tool-wrap .tool-container li p {
-  font-size: 1.4rem;
-  line-height: 1.8;
-  letter-spacing: 0.05em;
-}
-#skill .tool-wrap .tool-container li:nth-of-type(1) h4 {
-  color: #3ba9f4;
-}
-#skill .tool-wrap .tool-container li:nth-of-type(2) h4 {
-  color: #f55723;
-}
-#skill .tool-wrap .tool-container li:nth-of-type(3) h4 {
-  color: #7c4dff;
-}
-#skill .tool-wrap .tool-container li:nth-of-type(4) h4 {
-  color: #f641c8;
-}
-#skill .tool-wrap .tool-container.coding-tool-wrap li:nth-of-type(1) h4 {
-  color: #2877bd;
-}
-#skill .tool-wrap .tool-container.coding-tool-wrap li:nth-of-type(2) h4 {
-  color: #fbd603;
-}
-#skill .usage-experience-wrap {
-  margin-top: 80px;
-}
-#skill .usage-experience-wrap h3 {
-  font-size: clamp(2.4rem, 2.109rem + 1.45vw, 3.2rem);
-  margin: 10px 0px;
-}
-#skill .usage-experience-wrap ul {
-  list-style: none;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-#skill .usage-experience-wrap ul li {
-  border-radius: 10px;
-  background-color: white;
-  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.02);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 10px;
-}
-#skill .usage-experience-wrap ul li:last-of-type {
-  margin-right: 0px;
-}
-#skill .usage-experience-wrap ul li h4 {
-  font-size: 1.6rem;
-  letter-spacing: 0.01em;
-  color: #7f7f7f;
-}
-
-#contact {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#contact .address-wrap .please-contact {
-  font-size: 1.4rem;
-  text-align: center;
-  letter-spacing: 0.2em;
-}
-#contact .address-wrap .address {
-  margin-top: 32px;
-  border: solid 2px #333;
-  text-align: center;
-}
-#contact .address-wrap .address a {
-  display: block;
-  width: 320px;
+#profile .favorite-body .img-list .img-wrap .img {
+  width: 100%;
   height: 100%;
-  line-height: 56px;
-  font-size: 1.6rem;
-  letter-spacing: 0.1em;
-  text-decoration: none;
-  font-style: normal;
-  background-color: #333;
-  color: white;
-  transition: ease-in 0.2s;
+  object-fit: cover;
+  box-shadow: 0px 0px 20px -5px #a8a8a8;
 }
-#contact .address-wrap .address:hover a {
-  background-color: white;
-  color: #333;
+#profile .favorite-body .img-list .img-wrap1 {
+  width: 180px;
+  height: 180px;
+  top: 0;
+  left: 130px;
+}
+#profile .favorite-body .img-list .img-wrap2 {
+  width: 120px;
+  height: 120px;
+  top: 340px;
+  left: 340px;
+}
+#profile .favorite-body .img-list .img-wrap3 {
+  width: 240px;
+  height: 240px;
+  top: 540px;
+  left: 120px;
+}
+#profile .favorite-body .img-list .img-wrap4 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0px;
+  right: 220px;
+}
+#profile .favorite-body .img-list .img-wrap5 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 300px;
+  right: 420px;
+}
+#profile .favorite-body .img-list .img-wrap6 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 320px;
+  right: 180px;
 }
 
 #footer {
@@ -673,13 +571,6 @@ section .head2 {
   color: #fff;
 }
 
-@media (max-width: 1160px) {
-  #skill .skill-wrap {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-  }
-}
 @media (max-width: 800px) {
   header #g-nav {
     display: none;
