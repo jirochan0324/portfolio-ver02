@@ -484,9 +484,9 @@ header #m-nav.m-nav-open ul {
 #profile .profile-wrap .profile-content .name {
   font-size: 3rem;
   font-weight: 500;
-  margin: 10px 0px 8px;
+  padding: 16px 0px;
 }
-#profile .profile-wrap .profile-content .name-rubi {
+#profile .profile-wrap .profile-content .name .name-rubi {
   font-size: clamp(1rem, 0.491rem + 2.55vw, 2.4rem);
 }
 #profile .profile-wrap .profile-content .profile-text {
@@ -496,65 +496,6 @@ header #m-nav.m-nav-open ul {
   letter-spacing: 0.1em;
   max-width: 720px;
   min-width: 320px;
-}
-#profile .favorite-body {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-#profile .favorite-body .head2 {
-  font-size: clamp(3rem, 2.273rem + 3.64vw, 5rem);
-  color: black;
-}
-#profile .favorite-body .img-list {
-  height: 1200px;
-  position: relative;
-}
-#profile .favorite-body .img-list .img-wrap {
-  position: absolute;
-}
-#profile .favorite-body .img-list .img-wrap .img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  box-shadow: 0px 0px 20px -5px #a8a8a8;
-}
-#profile .favorite-body .img-list .img-wrap1 {
-  width: 180px;
-  height: 180px;
-  top: 0;
-  left: 130px;
-}
-#profile .favorite-body .img-list .img-wrap2 {
-  width: 120px;
-  height: 120px;
-  top: 340px;
-  left: 340px;
-}
-#profile .favorite-body .img-list .img-wrap3 {
-  width: 240px;
-  height: 240px;
-  top: 540px;
-  left: 120px;
-}
-#profile .favorite-body .img-list .img-wrap4 {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  top: 0px;
-  right: 220px;
-}
-#profile .favorite-body .img-list .img-wrap5 {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  top: 300px;
-  right: 420px;
-}
-#profile .favorite-body .img-list .img-wrap6 {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  top: 320px;
-  right: 180px;
 }
 
 #footer {
