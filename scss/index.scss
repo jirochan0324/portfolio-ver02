@@ -774,9 +774,11 @@ section {
   #work {
     .works-list {
       display: grid;
-      grid-template-rows: repeat(6,560px);
+      grid-template-rows: repeat(6,320px);
       .work {
-        border: solid;
+        .work-link{
+
+        }
       }
     }
   }
