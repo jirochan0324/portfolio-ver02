@@ -936,12 +936,15 @@ section .head2 {
   }
   #work .works-list {
     display: grid;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
   }
   #work .works-list .work .work-link {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  #work .works-list .work .work-link .work-name {
+    padding: 10px 0px;
   }
   #profile .profile-wrap {
     flex-direction: column;
