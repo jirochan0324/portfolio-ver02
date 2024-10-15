@@ -82,9 +82,9 @@ header {
     opacity: 0;
     visibility: hidden;
     z-index: 999;
-    background-color: rgb(85, 85, 85);
+    background-color: rgb(255,255,255,.6);
+    backdrop-filter: blur(8px);
     transition: all .3s;
-
     ul {
       display: none;
       position: absolute;
@@ -94,10 +94,10 @@ header {
 
       li {
         a {
-          color: white;
+          color: #333;
 
           &::after {
-            background-color: white;
+            background-color: #333;
           }
         }
       }
@@ -136,14 +136,13 @@ header {
   width: 50px;
   display: none;
   cursor: pointer;
-
   span {
     display: inline-block;
     transition: all .4s;
     position: absolute;
     left: 14px;
     height: 1px;
-    background-color: black;
+    background-color: #333;
     width: 45%;
 
     &:nth-of-type(1) {
@@ -162,8 +161,7 @@ header {
 
 .menu.active {
   span {
-    background-color: white;
-
+    background-color: #333;
     &:nth-of-type(1) {
       top: 18px;
       left: 18px;
@@ -190,7 +188,6 @@ header {
   height: 100vh;
   padding: 0px 10%;
   position: relative;
-
   .fv-container {
     position: absolute;
     top: 50%;
@@ -215,7 +212,6 @@ header {
       }
     }
   }
-
   .fv-container.job-container {
     position: relative;
 
@@ -253,7 +249,6 @@ header {
       }
     }
   }
-
   .scroll-wrap {
     height: 100%;
     width: 100%;
@@ -265,11 +260,21 @@ header {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-
     .scroll {
       animation-name: scroll-animate;
       animation-duration: 4s;
       animation-iteration-count: infinite;
+    }
+  }
+  .github-wrap{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    .github-link{
+      .github-link-icon{
+        width: 80px;
+        height: 80px;
+      }
     }
   }
 }
@@ -344,12 +349,17 @@ section {
   max-width: 1220px;
   min-width: 300px;
   margin: 0px auto;
-  padding: 120px 0px;
+  padding: 120px 24px;
   .head2 {
+    font-family: "Zen Kurenaido";
     text-align: center;
     font-size: clamp(3rem, 2.273rem + 3.64vw, 5rem);
     letter-spacing: 0.05em;
     padding-bottom: 80px;
+  }
+  .skill-name{
+    font-family: "Zen Kurenaido";
+    font-weight: normal;
   }
 }
 
@@ -577,18 +587,15 @@ section {
 
   .usage-experience-wrap {
     margin-top: 80px;
-
     h3 {
       font-size: clamp(2.4rem, 2.109rem + 1.45vw, 3.2rem);
       margin: 10px 0px;
     }
-
     ul {
       list-style: none;
       display: flex;
       justify-content: flex-start;
       align-items: center;
-
       li {
         border-radius: 10px;
         background-color: white;
@@ -758,10 +765,6 @@ section {
 
 @media (max-width:800px) {
   header {
-    .logo-img {
-      display: none;
-    }
-
     #g-nav {
       display: none;
     }
@@ -809,6 +812,14 @@ section {
   .fv-wrap {
     .fv-container {
       max-width: 320px;
+    }
+    .github-wrap{
+      .github-link{
+        .github-link-icon{
+          width: 48px;
+          height: 48px;
+        }
+      }
     }
   }
 }
