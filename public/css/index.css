@@ -320,21 +320,10 @@ header li a {
   padding: 0px 32px;
   font-size: 1.4rem;
   position: relative;
-}
-header li a::after {
-  content: "";
-  display: block;
-  width: 80%;
-  height: 2px;
-  background-color: #333;
-  position: absolute;
-  bottom: -4px;
-  left: 10%;
-  transform: scale(0, 1);
   transition: all 0.3s;
 }
-header li:hover a::after {
-  transform: scale(1, 1);
+header li:hover a {
+  color: #949cc7;
 }
 header .logo-img {
   position: fixed;
@@ -371,9 +360,9 @@ header #m-nav {
   opacity: 0;
   visibility: hidden;
   z-index: 999;
-  background-color: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(8px);
   transition: all 0.3s;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
 }
 header #m-nav ul {
   display: none;
@@ -381,12 +370,6 @@ header #m-nav ul {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-header #m-nav ul li a {
-  color: #333;
-}
-header #m-nav ul li a::after {
-  background-color: #333;
 }
 header #m-nav.m-nav-open {
   opacity: 1;

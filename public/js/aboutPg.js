@@ -34,12 +34,4 @@ window.addEventListener('scroll',()=>{
         document.querySelector('.my-policy').classList.add('show');
         document.querySelector('.my-policy-text').classList.add('show');
     };
-
-    const hobbyItem= document.querySelector('.hobby-wrap');
-    for(let i = 0 ; i < hobbyItem.length; i++){
-        var hobbyTop = hobbyItem[i].offsetTop;
-        if(window.scrollY + 500 > tagetTop){
-            item[i].classList.add('show');
-        }
-    }
 });

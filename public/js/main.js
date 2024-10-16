@@ -16,14 +16,14 @@ menuActive.addEventListener('click',()=>{
 });
 
 // fade-in スクロールイベント
-window.addEventListener('scroll',()=>{
-    const scroll = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const sections = document.querySelectorAll('.fadein-section');
-    sections.forEach(function(fadein){
-        const distanceToSection = fadein.offsetTop;
-        if(scroll + windowHeight > distanceToSection){
-            fadein.classList.add('fadein-active');
-        }
-    })
-})
+// window.addEventListener('scroll',()=>{
+//     const item= document.querySelectorAll('.scroll-fade-in-list');
+
+//     for(let i = 0 ; i < item.length; i++){
+//         var tagetTop = item[i].offsetTop;
+
+//         if(window.scrollY + 500 > tagetTop){
+//             item[i].classList.add('scroll-fade-in-active');
+//         }
+//     }
+// });
