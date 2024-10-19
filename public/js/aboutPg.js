@@ -23,14 +23,25 @@ fripImg.addEventListener("mouseover",()=>{
 fripImg.addEventListener("mouseout",()=>{
     fripImg.classList.remove('frip');
 });
-console.log(fripImg);
-
-
 
 window.addEventListener('scroll',()=>{
+    const carrier= document.querySelector('.carrier');
+    var carrierTop=carrier.offsetTop;
+    if(window.scrollY + 500 > carrierTop){
+        const carrierList = document.querySelectorAll('.carrier-list');
+        for(let i = 0 ; i < carrierList.length; i++){
+            var carrierTop = carrierList[i].offsetTop;
+            if(window.scrollY + 480 > carrierTop){
+                setTimeout(() => {
+                    carrierList[i].classList.add('carrier-list-active');
+                }, i * 200);
+            }
+        }
+    };
+
     const item= document.querySelector('.policy-wrap');
     var tagetTop = item.offsetTop;
-    if(window.scrollY + 500 > tagetTop){
+    if(window.scrollY + 640 > tagetTop){
         document.querySelector('.my-policy').classList.add('show');
         document.querySelector('.my-policy-text').classList.add('show');
     };
