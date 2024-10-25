@@ -284,6 +284,10 @@ html, body {
   height: 100%;
 }
 
+html, body, a {
+  cursor: none;
+}
+
 body {
   width: 100%;
   height: 100%;
@@ -292,6 +296,42 @@ body {
   color: #333;
   background-color: rgb(250, 250, 250);
   animation: fadein 1.6s forwards;
+}
+
+#cursor {
+  pointer-events: none;
+  position: fixed;
+  top: -4px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  background: rgb(0, 0, 0);
+  transform: translate(-100px, -100px);
+  border-radius: 50%;
+  z-index: 999;
+}
+
+#stalker {
+  pointer-events: none;
+  position: fixed;
+  top: -16px;
+  left: -16px;
+  width: 32px;
+  height: 32px;
+  background: rgba(253, 254, 0, 0.8);
+  border-radius: 50%;
+  transform: translate(-100px, -100px);
+  transition: transform 0.2s;
+  transition-timing-function: ease-out;
+  z-index: 998;
+}
+
+#stalker.hov_ {
+  top: -40px;
+  left: -40px;
+  width: 80px;
+  height: 80px;
+  transition: 0.15s;
 }
 
 @keyframes fadein {
@@ -308,22 +348,6 @@ header {
   animation: headerIn 1.5s forwards;
   width: 100%;
   z-index: 999;
-}
-header li {
-  list-style: none;
-  text-align: center;
-  padding: 10px;
-}
-header li a {
-  text-decoration: none;
-  color: #333;
-  padding: 0px 32px;
-  font-size: 1.4rem;
-  position: relative;
-  transition: all 0.3s;
-}
-header li:hover a {
-  color: #949cc7;
 }
 header .logo-img {
   position: fixed;
@@ -351,6 +375,22 @@ header #g-nav ul {
   align-items: center;
   list-style: none;
 }
+header #g-nav ul li {
+  list-style: none;
+  text-align: center;
+  margin-right: 32px;
+}
+header #g-nav ul li a {
+  padding: 0px 16px;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.4rem;
+  position: relative;
+  transition: all 0.3s;
+}
+header #g-nav ul li:hover a {
+  color: #949cc7;
+}
 header #m-nav {
   overflow-y: hidden;
   position: fixed;
@@ -361,8 +401,7 @@ header #m-nav {
   visibility: hidden;
   z-index: 999;
   transition: all 0.3s;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
+  background: rgb(255, 255, 255);
 }
 header #m-nav ul {
   display: none;
@@ -370,6 +409,25 @@ header #m-nav ul {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+header #m-nav ul li {
+  list-style: none;
+  text-align: center;
+  margin-right: 0px;
+  margin-top: 16px;
+  padding: 8px;
+}
+header #m-nav ul li a {
+  padding: 0px 16px;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.4rem;
+  position: relative;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+header #m-nav ul li:hover a {
+  color: #949cc7;
 }
 header #m-nav.m-nav-open {
   opacity: 1;
@@ -513,15 +571,6 @@ header #m-nav.m-nav-open ul {
   animation-duration: 4s;
   animation-iteration-count: infinite;
 }
-.fv-wrap .github-wrap {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-}
-.fv-wrap .github-wrap .github-link .github-link-icon {
-  width: 80px;
-  height: 80px;
-}
 
 @keyframes scroll-animate {
   0% {
@@ -580,8 +629,8 @@ header #m-nav.m-nav-open ul {
 section {
   max-width: 1220px;
   min-width: 300px;
-  margin: 0px auto;
-  padding: 120px 24px;
+  margin: 120px auto 0px;
+  padding: 0px 24px;
 }
 section .head2 {
   font-family: "Zen Kurenaido";
@@ -621,6 +670,10 @@ section .skill-name {
   background-color: #fff;
   padding: 20px;
   box-shadow: 0px 0px 10px px #cecece;
+  opacity: 0;
+  transform: scale(0.8);
+  transform-origin: center;
+  transition: 1s;
 }
 #work .works-list .work .work-link {
   height: 100%;
@@ -689,6 +742,10 @@ section .skill-name {
   display: block;
   transform: scaleX(100%);
   background-color: #333;
+}
+#work .works-list .work.work-show {
+  opacity: 1;
+  transform: scale(1);
 }
 
 #skill .skill-wrap {
@@ -804,32 +861,95 @@ section .skill-name {
 }
 
 #profile .profile-wrap {
-  display: flex;
+  position: relative;
+  margin: 80px auto 0px;
+}
+#profile .profile-wrap .profile-body {
+  display: grid;
+  grid-template-columns: minmax(240px, 400px) 1fr;
   justify-content: space-between;
-  align-items: center;
 }
-#profile .profile-wrap .profile-img-wrap {
+#profile .profile-wrap .profile-body .profile-img-wrap {
+  position: relative;
+  perspective: 1000px;
   width: 100%;
-  max-width: 320px;
+  min-width: 240px;
 }
-#profile .profile-wrap .profile-img-wrap .profile-img {
+#profile .profile-wrap .profile-body .profile-img-wrap .img-wrap {
   width: 100%;
-  height: auto;
-  margin-left: auto;
+  min-width: 240px;
+  border-radius: 9999px;
 }
-#profile .profile-wrap .profile-content .name {
-  font-size: 3rem;
-  font-weight: 500;
-  margin: 10px 0px 8px;
+#profile .profile-wrap .profile-body .profile-img-wrap .img-wrap .profile-img {
+  border-radius: 9999px;
+  width: 100%;
 }
-#profile .profile-wrap .profile-content .name-rubi {
-  font-size: clamp(1rem, 0.491rem + 2.55vw, 2.4rem);
+#profile .profile-wrap .profile-body .profile-img-wrap .illust {
+  backface-visibility: hidden;
+  transition: transform 1s;
 }
-#profile .profile-wrap .profile-content .profile-text {
+#profile .profile-wrap .profile-body .profile-img-wrap .photo {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 1s;
+  transform: rotateY(180deg);
+}
+#profile .profile-wrap .profile-body .rotate-anima-wrap {
+  z-index: -1;
+  position: absolute;
+  top: -15%;
+  left: -15%;
+  pointer-events: none;
+  width: 100%;
+}
+#profile .profile-wrap .profile-body .rotate-anima-wrap svg {
+  width: 100%;
+  max-width: 420px;
+  animation-name: rotateInfinity;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+#profile .profile-wrap .profile-body .profile-img-wrap.frip .illust {
+  transform: rotateY(180deg);
+}
+#profile .profile-wrap .profile-body .profile-img-wrap.frip .photo {
+  transform: rotateY(0deg);
+}
+#profile .profile-wrap .profile-body .profile-content {
+  padding-left: 40px;
+  text-align: left;
+}
+#profile .profile-wrap .profile-body .profile-content .prorile-text-body {
+  width: fit-content;
   font-size: 1.6rem;
   line-height: 2;
-  letter-spacing: 0.1em;
-  max-width: 560px;
+  margin: 2px 0px;
+  letter-spacing: 2px;
+  position: relative;
+}
+#profile .profile-wrap .profile-body .profile-content .prorile-text-body .line {
+  position: absolute;
+  width: 100%;
+  animation-timing-function: cubic-bezier(0.79, 0.14, 0.15, 0.86);
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #555;
+}
+#profile .profile-wrap .profile-body .profile-content .prorile-text-body .profile-text.profile-text-active {
+  animation-name: profileText;
+  animation-duration: 2s;
+}
+#profile .profile-wrap .profile-body .profile-content .prorile-text-body .line.line-active {
+  animation-name: profileTextSpan;
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+  transform: scaleX(0);
 }
 #profile .about-link-wrap {
   display: flex;
@@ -860,6 +980,55 @@ section .skill-name {
   transform: scale(1, 1);
 }
 
+@keyframes rotateInfinity {
+  to {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes profileTextSpan {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  1% {
+    opacity: 1;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(100%);
+    transform-origin: left;
+  }
+  51% {
+    opacity: 1;
+    transform: scaleX(100%);
+    transform-origin: right;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(0%);
+    transform-origin: right;
+  }
+}
+@keyframes profileText {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 #contact {
   display: flex;
   flex-direction: column;
@@ -904,11 +1073,12 @@ section .skill-name {
 
 #footer {
   width: 100%;
-  text-align: center;
   background-color: #333;
+  padding: 32px 0px;
+  margin-top: 120px;
 }
 #footer .footer-text {
-  padding: 32px 0px;
+  text-align: center;
   font-size: 1.2rem;
   letter-spacing: 0.1em;
   font-weight: bold;
@@ -916,6 +1086,25 @@ section .skill-name {
 }
 
 @media (max-width: 1160px) {
+  #profile .profile-wrap .profile-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  #profile .profile-wrap .profile-body .profile-img-wrap {
+    order: 1;
+    max-width: 240px;
+  }
+  #profile .profile-wrap .profile-body .profile-content {
+    order: 3;
+    margin-left: 0px;
+    margin-top: 40px;
+    padding-left: 0px;
+  }
+  #profile .profile-wrap .my-info-wrap {
+    order: 2;
+  }
   #skill .skill-wrap {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));

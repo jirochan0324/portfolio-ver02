@@ -7,24 +7,6 @@ header {
   animation: headerIn 1.5s forwards;
   width: 100%;
   z-index: 999;
-  li {
-    list-style: none;
-    text-align: center;
-    padding: 10px;
-    a {
-      text-decoration: none;
-      color: #333;
-      padding: 0px 32px;
-      font-size: 1.4rem;
-      position: relative;
-      transition: all .3s;
-    }
-    &:hover {
-      a {
-        color: #949cc7;
-      }
-    }
-  }
   .logo-img {
     position: fixed;
     top: 0;
@@ -43,13 +25,30 @@ header {
     align-items: center;
     width: 100%;
     height: 80px;
-
     ul {
       height: 100%;
       display: flex;
       justify-content: flex-end;
       align-items: center;
       list-style: none;
+      li{
+        list-style: none;
+        text-align: center;
+        margin-right: 32px;
+        a{
+          padding: 0px 16px;
+          text-decoration: none;
+          color: #333;
+          font-size: 1.4rem;
+          position: relative;
+          transition: all .3s;
+        }
+        &:hover {
+          a {
+            color: #949cc7;
+          }
+        }
+      }
     }
   }
   #m-nav {
@@ -62,14 +61,34 @@ header {
     visibility: hidden;
     z-index: 999;
     transition: all .3s;
-    background: rgba(255, 255, 255, .2);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 1);
     ul {
       display: none;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      li{
+        list-style: none;
+        text-align: center;
+        margin-right: 0px;
+        margin-top: 16px;
+        padding: 8px;
+        a{
+          padding: 0px 16px;
+          text-decoration: none;
+          color: #333;
+          font-size: 1.4rem;
+          position: relative;
+          transition: all .3s;
+          cursor: pointer;
+        }
+        &:hover {
+          a {
+            color: #949cc7;
+          }
+        }
+      }
     }
   }
   #m-nav.m-nav-open {
@@ -233,17 +252,6 @@ header {
       animation-iteration-count: infinite;
     }
   }
-  .github-wrap{
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    .github-link{
-      .github-link-icon{
-        width: 80px;
-        height: 80px;
-      }
-    }
-  }
 }
 
 @keyframes scroll-animate {
@@ -315,8 +323,8 @@ header {
 section {
   max-width: 1220px;
   min-width: 300px;
-  margin: 0px auto;
-  padding: 120px 24px;
+  margin: 120px auto 0px;
+  padding: 0px 24px;
   .head2 {
     font-family: "Zen Kurenaido";
     text-align: center;
@@ -328,15 +336,6 @@ section {
     font-family: "Zen Kurenaido";
     font-weight: normal;
   }
-  // .scroll-fade-in{
-  //   opacity: 0;
-  //   transform: scale(0);
-  //   transition: 1s;
-  // }
-  // .scroll-fade-in.scroll-fade-in-active{
-  //   opacity: 1;
-  //   transform: scale(1);
-  // }
 }
 
 .fadein-section {
@@ -367,6 +366,10 @@ section {
       background-color: #fff;
       padding: 20px;
       box-shadow: 0px 0px 10px px #cecece;
+      opacity:0;
+      transform: scale(0.8);
+      transform-origin: center;
+      transition: 1s;
       .work-link {
         height: 100%;
         position: relative;
@@ -439,6 +442,10 @@ section {
           }
         }
       }
+    }
+    .work.work-show{
+      opacity: 1;
+      transform: scale(1);
     }
   }
 }
@@ -598,36 +605,96 @@ section {
 
 // #profile
 #profile {
-  .profile-wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .profile-img-wrap {
-      width: 100%;
-      max-width: 320px;
-      .profile-img {
+  .profile-wrap{
+    position: relative;
+    margin: 80px auto 0px;
+    .profile-body{
+      display: grid;
+      grid-template-columns: minmax(240px,400px) 1fr;
+      justify-content: space-between;
+      .profile-img-wrap{
+        position: relative;
+        perspective : 1000px;
         width: 100%;
-        height: auto;
-        margin-left: auto;
+        min-width: 240px;
+        .img-wrap{
+          width: 100%;
+          min-width: 240px;
+          border-radius: 9999px;
+          .profile-img{
+            border-radius: 9999px;
+            width: 100%;
+          }
+        }
+        .illust{
+          backface-visibility : hidden;
+          transition: transform 1s;
+        }
+        .photo{
+          backface-visibility : hidden;
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: transform 1s;
+          transform: rotateY(180deg);
+        }
       }
-    }
-
-    .profile-content {
-      .name {
-        font-size: 3rem;
-        font-weight: 500;
-        margin: 10px 0px 8px;
+      .rotate-anima-wrap{
+        z-index: -1;
+        position: absolute;
+        top: -15%;
+        left: -15%;
+        pointer-events: none;
+        width: 100%;
+        svg{
+          width: 100%;
+          max-width: 420px;
+          animation-name: rotateInfinity;
+          animation-duration: 60s;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+        }
       }
-
-      .name-rubi {
-        font-size: clamp(1rem, 0.491rem + 2.55vw, 2.4rem);
+      .profile-img-wrap.frip{
+        .illust{
+          transform: rotateY(180deg);
+        }
+        .photo{
+          transform : rotateY(0deg);
+        }
       }
-
-      .profile-text {
-        font-size: 1.6rem;
-        line-height: 2;
-        letter-spacing: 0.1em;
-        max-width: 560px;
+      .profile-content{
+        padding-left: 40px;
+        text-align: left;
+        .prorile-text-body{
+          width: fit-content;
+          font-size: 1.6rem;
+          line-height: 2;
+          margin: 2px 0px;
+          letter-spacing: 2px;
+          position: relative;
+          .line{
+            position: absolute;
+            width: 100%;
+            animation-timing-function: cubic-bezier(0.79,0.14,0.15,0.86);;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #555;
+          }
+          .profile-text.profile-text-active{
+            animation-name: profileText;
+            animation-duration: 2s;
+          }
+          .line.line-active{
+            animation-name: profileTextSpan;
+            animation-fill-mode: forwards;
+            animation-duration: 2s;
+            transform: scaleX(0);
+          }
+        }
       }
     }
   }
@@ -665,6 +732,60 @@ section {
     }
   }
 }
+
+@keyframes rotateInfinity{
+  to{
+    transform: rotate(0deg);
+  }
+  from{
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes profileTextSpan{
+  0%{
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  1%{
+    opacity: 1;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  50%{
+    opacity: 1;
+    transform: scaleX(100%);
+    transform-origin: left;
+  }
+  51%{
+    opacity: 1;
+    transform: scaleX(100%);
+    transform-origin: right;
+  }
+
+  100%{
+    opacity: 1;
+    transform: scaleX(0%);
+    transform-origin: right;
+  }
+}
+@keyframes profileText{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0;
+  }
+  51%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
 
 // #contact
 #contact {
@@ -716,10 +837,11 @@ section {
 // #fotter
 #footer {
   width: 100%;
-  text-align: center;
   background-color: #333;
+  padding: 32px 0px;
+  margin-top: 120px;
   .footer-text {
-    padding: 32px 0px;
+    text-align: center;
     font-size: 1.2rem;
     letter-spacing: .1em;
     font-weight: bold;
@@ -730,6 +852,30 @@ section {
 
 // レスポンシブ---スタイル
 @media (max-width:1160px) {
+  #profile{
+    .profile-wrap{
+      .profile-body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        .profile-img-wrap{
+          order: 1;
+          max-width: 240px;
+        }
+        .profile-content{
+          order: 3;
+          margin-left: 0px;
+          margin-top: 40px;
+          padding-left: 0px;
+        }
+      }
+      .my-info-wrap{
+        order: 2;
+      }
+    }
+  }
+
   #skill {
     .skill-wrap {
       display: grid;
@@ -738,6 +884,7 @@ section {
     }
   }
 }
+
 
 @media (max-width:800px) {
   header {
@@ -783,6 +930,7 @@ section {
     }
   }
 }
+
 
 @media (max-width: 428px) {
   .fv-wrap {

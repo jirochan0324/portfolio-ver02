@@ -27,7 +27,7 @@ fripImg.addEventListener("mouseout",()=>{
 window.addEventListener('scroll',()=>{
     const carrier= document.querySelector('.carrier');
     var carrierTop=carrier.offsetTop;
-    if(window.scrollY + 500 > carrierTop){
+    if(window.scrollY + 480 > carrierTop){
         const carrierList = document.querySelectorAll('.carrier-list');
         for(let i = 0 ; i < carrierList.length; i++){
             var carrierTop = carrierList[i].offsetTop;
@@ -44,5 +44,19 @@ window.addEventListener('scroll',()=>{
     if(window.scrollY + 640 > tagetTop){
         document.querySelector('.my-policy').classList.add('show');
         document.querySelector('.my-policy-text').classList.add('show');
+    };
+
+    const hobby=document.querySelector('.hobby-list');
+    var hobbyTop=hobby.offsetTop;
+    if(window.scrollY + 640 > hobbyTop){
+        const hobbyList=document.querySelectorAll('.hobby-img-wrap');
+        for (let i = 0; i < hobbyList.length; i++) {
+            var hobbyTop = hobbyList[i].offsetTop;
+            if(window.scrollY + 640 > hobbyTop){
+                setTimeout(() => {
+                    hobbyList[i].classList.add('hobby-img-wrap-show');
+                }, i * 200);
+            }
+        }
     };
 });

@@ -5,6 +5,10 @@ html{
 html,body{
   height: 100%;
 }
+
+html,body,a{
+  cursor: none;
+}
 body{
     width: 100%;
     height: 100%;
@@ -14,6 +18,42 @@ body{
     background-color: rgb(250, 250, 250);
     animation: fadein 1.6s forwards;
 }
+
+#cursor{
+  pointer-events: none;
+  position: fixed;
+  top: -4px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  background: rgba(0, 0, 0, 1.0);
+  transform: translate(-100px,-100px);
+  border-radius: 50%;
+  z-index: 999;
+}
+#stalker {
+  pointer-events: none;
+  position: fixed;
+  top: -16px;
+  left: -16px;
+  width: 32px;
+  height: 32px;
+  background: rgba(253, 254, 0, 0.8);
+  border-radius: 50%;
+  transform: translate(-100px,-100px);
+  transition: transform 0.2s;
+  transition-timing-function: ease-out;
+  z-index: 998;
+}
+#stalker.hov_ {
+  top: -40px;
+  left: -40px;
+  width: 80px;
+  height: 80px;
+  transition: .15s;
+}
+
+
 
 @keyframes fadein {
   0% {
