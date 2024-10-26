@@ -458,7 +458,7 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
-    li {
+    .section-fade-in-item{
       height: 480px;
       padding: 40px 24px;
       display: flex;
@@ -468,7 +468,9 @@ section {
       border-radius: 10px;
       background-color: white;
       box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.02);
-
+      opacity: 0;
+      transform: scale(.8);
+      transition: 1s;
       .skill-icon {
         width: 64px;
       }
@@ -486,6 +488,10 @@ section {
         line-height: 2;
         letter-spacing: 0.1em;
       }
+    }
+    .section-fade-in-item.active{
+      transform: scale(1);
+      opacity: 1;
     }
   }
 
@@ -505,14 +511,16 @@ section {
       gap: 32px;
       list-style: none;
 
-      li {
+      .section-fade-in-item{
         display: flex;
         flex-direction: column;
         border-radius: 10px;
         background-color: white;
         box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.02);
         padding: 20px;
-
+        opacity: 0;
+        transform: scale(.8);
+        transition: 1s;
         h4 {
           font-size: 1.6rem;
           margin: 8px 0px;
@@ -549,6 +557,10 @@ section {
         }
 
       }
+      .section-fade-in-item.active{
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     .tool-container.coding-tool-wrap {
@@ -579,7 +591,7 @@ section {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      li {
+      .section-fade-in-item {
         border-radius: 10px;
         background-color: white;
         box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.02);
@@ -588,7 +600,9 @@ section {
         flex-direction: column;
         align-items: center;
         margin-right: 10px;
-
+        opacity: 0;
+        transform: scale(.8);
+        transition: 1s;
         &:last-of-type {
           margin-right: 0px;
         }
@@ -598,6 +612,10 @@ section {
           letter-spacing: .01em;
           color: #7f7f7f;
         }
+      }
+      .section-fade-in-item.active{
+        transform: scale(1);
+        opacity: 1;
       }
     }
   }

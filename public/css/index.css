@@ -754,7 +754,7 @@ section .skill-name {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 40px;
 }
-#skill .skill-wrap li {
+#skill .skill-wrap .section-fade-in-item {
   height: 480px;
   padding: 40px 24px;
   display: flex;
@@ -764,21 +764,28 @@ section .skill-name {
   border-radius: 10px;
   background-color: white;
   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.02);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: 1s;
 }
-#skill .skill-wrap li .skill-icon {
+#skill .skill-wrap .section-fade-in-item .skill-icon {
   width: 64px;
 }
-#skill .skill-wrap li h3 {
+#skill .skill-wrap .section-fade-in-item h3 {
   font-size: 1.8rem;
   letter-spacing: 0.1em;
   text-align: center;
   margin: 32px 0px;
 }
-#skill .skill-wrap li p {
+#skill .skill-wrap .section-fade-in-item p {
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 2;
   letter-spacing: 0.1em;
+}
+#skill .skill-wrap .section-fade-in-item.active {
+  transform: scale(1);
+  opacity: 1;
 }
 #skill .tool-wrap:not(:first-child) {
   margin-top: 80px;
@@ -793,34 +800,41 @@ section .skill-name {
   gap: 32px;
   list-style: none;
 }
-#skill .tool-wrap .tool-container li {
+#skill .tool-wrap .tool-container .section-fade-in-item {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   background-color: white;
   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.02);
   padding: 20px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: 1s;
 }
-#skill .tool-wrap .tool-container li h4 {
+#skill .tool-wrap .tool-container .section-fade-in-item h4 {
   font-size: 1.6rem;
   margin: 8px 0px;
 }
-#skill .tool-wrap .tool-container li p {
+#skill .tool-wrap .tool-container .section-fade-in-item p {
   font-size: 1.4rem;
   line-height: 1.8;
   letter-spacing: 0.05em;
 }
-#skill .tool-wrap .tool-container li:nth-of-type(1) h4 {
+#skill .tool-wrap .tool-container .section-fade-in-item:nth-of-type(1) h4 {
   color: #3ba9f4;
 }
-#skill .tool-wrap .tool-container li:nth-of-type(2) h4 {
+#skill .tool-wrap .tool-container .section-fade-in-item:nth-of-type(2) h4 {
   color: #f55723;
 }
-#skill .tool-wrap .tool-container li:nth-of-type(3) h4 {
+#skill .tool-wrap .tool-container .section-fade-in-item:nth-of-type(3) h4 {
   color: #7c4dff;
 }
-#skill .tool-wrap .tool-container li:nth-of-type(4) h4 {
+#skill .tool-wrap .tool-container .section-fade-in-item:nth-of-type(4) h4 {
   color: #f641c8;
+}
+#skill .tool-wrap .tool-container .section-fade-in-item.active {
+  transform: scale(1);
+  opacity: 1;
 }
 #skill .tool-wrap .tool-container.coding-tool-wrap li:nth-of-type(1) h4 {
   color: #2877bd;
@@ -841,7 +855,7 @@ section .skill-name {
   justify-content: flex-start;
   align-items: center;
 }
-#skill .usage-experience-wrap ul li {
+#skill .usage-experience-wrap ul .section-fade-in-item {
   border-radius: 10px;
   background-color: white;
   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.02);
@@ -850,14 +864,21 @@ section .skill-name {
   flex-direction: column;
   align-items: center;
   margin-right: 10px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: 1s;
 }
-#skill .usage-experience-wrap ul li:last-of-type {
+#skill .usage-experience-wrap ul .section-fade-in-item:last-of-type {
   margin-right: 0px;
 }
-#skill .usage-experience-wrap ul li h4 {
+#skill .usage-experience-wrap ul .section-fade-in-item h4 {
   font-size: 1.6rem;
   letter-spacing: 0.01em;
   color: #7f7f7f;
+}
+#skill .usage-experience-wrap ul .section-fade-in-item.active {
+  transform: scale(1);
+  opacity: 1;
 }
 
 #profile .profile-wrap {
