@@ -96,9 +96,11 @@ window.addEventListener('scroll',()=>{
     if(window.scrollY + 640 > workTop){
         const workList=document.querySelectorAll('.work');
         for (let i = 0; i < workList.length; i++) {
-            var workTop = workList[i].offsetTop;
             if(window.scrollY + 640 > workTop){
-                workList[i].classList.add('work-show');
+                setTimeout(() => {
+                    workList[i].classList.add('work-show');
+                }, i * 200);
+
             }
         }
     };
