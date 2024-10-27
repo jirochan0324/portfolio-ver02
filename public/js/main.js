@@ -139,6 +139,7 @@ window.addEventListener('scroll',()=>{
 
 });
 
+const hoge=document.querySelector('.loading-logo');
+const hogeTop=hoge.offsetTop;
 
-
-console.log(true);
+console.log(hogeTop);
