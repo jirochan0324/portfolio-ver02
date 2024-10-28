@@ -298,50 +298,6 @@ body {
   animation: fadein 1.6s forwards;
 }
 
-#cursor {
-  pointer-events: none;
-  position: fixed;
-  top: -4px;
-  left: -4px;
-  width: 8px;
-  height: 8px;
-  background: rgb(0, 0, 0);
-  transform: translate(-100px, -100px);
-  border-radius: 50%;
-  z-index: 999;
-}
-
-#stalker {
-  pointer-events: none;
-  position: fixed;
-  top: -16px;
-  left: -16px;
-  width: 32px;
-  height: 32px;
-  background: rgba(253, 254, 0, 0.8);
-  border-radius: 50%;
-  transform: translate(-100px, -100px);
-  transition: transform 0.2s;
-  transition-timing-function: ease-out;
-  z-index: 998;
-}
-
-#stalker.hov_ {
-  top: -40px;
-  left: -40px;
-  width: 80px;
-  height: 80px;
-  transition: 0.15s;
-}
-
-@keyframes fadein {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 #loading {
   width: 100vw;
   height: 100vh;
@@ -441,7 +397,7 @@ body {
   }
 }
 #loading.loaded {
-  animation: loaded 1s forwards;
+  animation: loaded 0.5s forwards;
 }
 
 @keyframes loaded {
@@ -453,20 +409,48 @@ body {
     visibility: hidden;
   }
 }
-@keyframes loadedTop {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
+#cursor {
+  pointer-events: none;
+  position: fixed;
+  top: -4px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  background: rgb(0, 0, 0);
+  transform: translate(-100px, -100px);
+  border-radius: 50%;
+  z-index: 999;
 }
-@keyframes loadedBottom {
+
+#stalker {
+  pointer-events: none;
+  position: fixed;
+  top: -16px;
+  left: -16px;
+  width: 32px;
+  height: 32px;
+  background: rgba(253, 254, 0, 0.8);
+  border-radius: 50%;
+  transform: translate(-100px, -100px);
+  transition: transform 0.2s;
+  transition-timing-function: ease-out;
+  z-index: 998;
+}
+
+#stalker.hov_ {
+  top: -40px;
+  left: -40px;
+  width: 80px;
+  height: 80px;
+  transition: 0.15s;
+}
+
+@keyframes fadein {
   0% {
-    transform: translateY(0);
+    opacity: 0;
   }
   100% {
-    transform: translateY(100%);
+    opacity: 1;
   }
 }
 header {
@@ -641,7 +625,10 @@ header #m-nav.m-nav-open ul {
 .fv-wrap .fv-container svg {
   width: 100%;
 }
-.fv-wrap .fv-container svg path {
+.fv-wrap .fv-container svg .path {
+  opacity: 0;
+}
+.fv-wrap .fv-container svg .path.active {
   fill: #000;
   fill-opacity: 0;
   stroke: #000;
@@ -661,6 +648,9 @@ header #m-nav.m-nav-open ul {
   font-size: clamp(2rem, 1.286rem + 3.57vw, 4.5rem);
 }
 .fv-wrap .fv-container.job-container .fv-job-wrap .fv-job {
+  opacity: 0;
+}
+.fv-wrap .fv-container.job-container .fv-job-wrap .fv-job.fv-job-animation {
   animation-name: fv-job-fadein;
   animation-duration: 1s;
   animation-delay: 1s;
@@ -742,6 +732,7 @@ header #m-nav.m-nav-open ul {
 }
 @keyframes textAnimation {
   0% {
+    opacity: 1;
     stroke-dashoffset: 1000;
   }
   80% {
@@ -751,6 +742,7 @@ header #m-nav.m-nav-open ul {
   100% {
     stroke-dashoffset: 10;
     fill-opacity: 1;
+    opacity: 1;
   }
 }
 section {

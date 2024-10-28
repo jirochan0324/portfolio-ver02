@@ -138,8 +138,3 @@ window.addEventListener('scroll',()=>{
     // console.log(sectionFadeIn);
 
 });
-
-const hoge=document.querySelector('.loading-logo');
-const hogeTop=hoge.offsetTop;
-
-console.log(hogeTop);
