@@ -650,7 +650,7 @@ header #m-nav.m-nav-open ul {
   line-height: 2;
 }
 #work .work-wrap .work-head .work-body {
-  margin-top: 80px;
+  margin-top: 32px;
 }
 #work .work-wrap .work-head .work-body .work-body-content {
   display: flex;
@@ -706,6 +706,13 @@ header #m-nav.m-nav-open ul {
 }
 #work .work-wrap .work-head .work-body .work-link-wrap:hover a {
   color: #333;
+}
+#work .work-wrap .work-head .work-exp {
+  margin-top: 80px;
+}
+#work .work-wrap .work-head .work-exp .work-exp-head {
+  font-size: 2rem;
+  padding: 20px 0px;
 }
 
 #footer {

@@ -206,7 +206,7 @@ header{
         line-height: 2;
       }
       .work-body{
-        margin-top: 80px;
+        margin-top: 32px;
         .work-body-content{
           display: flex;
           justify-content: space-between;
@@ -261,6 +261,13 @@ header{
               color: #333;
             }
           }
+        }
+      }
+      .work-exp{
+        margin-top: 80px;
+        .work-exp-head{
+          font-size: 2rem;
+          padding: 20px 0px;
         }
       }
     }
