@@ -332,8 +332,8 @@ header {
 section {
   max-width: 1220px;
   min-width: 300px;
-  margin: 120px auto 0px;
-  padding: 0px 24px;
+  margin: 0px auto ;
+  padding: 120px 24px;
   .head2 {
     font-family: "Zen Kurenaido";
     text-align: center;
@@ -455,6 +455,38 @@ section {
     .work.work-show{
       opacity: 1;
       transform: scale(1);
+    }
+  }
+  .work-link-wrap {
+    margin-top: 80px;
+    display: flex;
+    justify-content: flex-end;
+    .work-more-link {
+      text-decoration: none;
+      color: #d1d1d1;
+      mix-blend-mode: difference;
+      font-size: clamp(4rem, 3.273rem + 3.64vw, 6rem);
+      font-weight: 700;
+      transition: all .3s;
+
+      &::after {
+        display: block;
+        content: " ";
+        width: 100%;
+        height: 4px;
+        background-color: #333;
+        transform-origin: left;
+        transform: scale(0, 1);
+        transition: all .3s;
+      }
+
+      &:hover {
+        color: #15163b;
+
+        &::after {
+          transform: scale(1, 1);
+        }
+      }
     }
   }
 }

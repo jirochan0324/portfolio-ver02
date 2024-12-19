@@ -379,6 +379,70 @@ header {
       }
     }
   }
+  .fv-song-wrap{
+    padding:100px 0px;
+    width: 100%;
+    height: 100%;
+    .head3{
+      color:#bebebe;
+      font-size: clamp(2.4rem, 1.091rem + 6.55vw, 6rem);
+      font-weight: 500;
+    }
+    .fv-song-content{
+      margin-top: 80px;
+      height: 355px;
+      width: 100%;
+      max-width: 1220px;
+      position: relative;
+      .fv-song-list{
+        width: 100%;
+        position: absolute;
+        top: 0;
+        display: flex;
+        flex-wrap: wrap;
+        opacity: 1;
+        transition: 2s ease;
+        z-index: 2;
+        .fv-song-text-wrap{
+          margin: 0 auto;
+          .fv-song-name{
+            color: #333;
+            font-size: clamp(2.4rem, 2.182rem + 1.09vw, 3rem);
+            transition-duration: 2s;
+            padding: 16px 0px;
+            line-height: 1.5;
+            .br{
+              display: none;
+            }
+          }
+          .fv-song-text{
+            font-size: 1.6rem;
+            line-height: 2;
+            color: #7f7f7f;
+          }
+        }
+      }
+      .fv-song-list.active{
+        opacity: 0;
+        z-index: 1;
+      }
+    }
+    .song-border-second{
+      margin-top: 20px;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 3px;
+      border-radius: 9999px;
+      background-color: #9caab8;
+      transform: scaleX(0);
+      transform-origin: left;
+      animation-name: border-active;
+      animation-duration: 24s;
+      animation-iteration-count: infinite;
+      transition-timing-function: linear;
+    }
+  }
   .hobby-wrap{
     padding:100px 0px;
     width: 100%;
@@ -455,6 +519,15 @@ header {
         }
       }
     }
+  }
+}
+
+@keyframes border-active{
+  0%{
+    transform: scaleX(0);
+  }
+  100%{
+    transform: scaleX(1);
   }
 }
 

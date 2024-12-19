@@ -60,3 +60,27 @@ window.addEventListener('scroll',()=>{
         }
     };
 });
+
+
+// fv-song-fadein-
+document.addEventListener("DOMContentLoaded", () => {
+    const boxes = document.querySelectorAll(".fv-song-list");
+    let currentIndex = 0;
+
+    function activateBox() {
+        // Remove "active" class from all boxes
+        boxes.forEach(box => box.classList.remove("active"));
+
+        // Add "active" class to the current box
+        boxes[currentIndex].classList.add("active");
+
+        // Increment index and reset if it reaches the end
+        currentIndex = (currentIndex + 1) % boxes.length;
+    }
+
+    // Call the function every 2 seconds
+    setInterval(activateBox, 24000);
+
+    // Initialize the first box as active
+    activateBox();
+});
