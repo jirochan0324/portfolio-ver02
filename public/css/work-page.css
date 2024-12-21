@@ -631,6 +631,11 @@ header #m-nav.m-nav-open ul {
   cursor: pointer;
   font-size: clamp(1rem, 0.855rem + 0.73vw, 1.4rem);
   border: solid;
+  transition: 0.2s;
+}
+.work-gallery .filter .filter-list.active {
+  background-color: #333;
+  color: #fff;
 }
 .work-gallery .category {
   margin-top: 80px;

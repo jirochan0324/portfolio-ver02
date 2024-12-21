@@ -176,7 +176,7 @@ header{
     flex-direction: column;
     align-items: center;
     .work-img-wrap{
-      border:   100%;
+      border: 100%;
       height: 480px;
       img{
         width: 100%;
@@ -192,6 +192,7 @@ header{
         text-align: center;
         font-size: clamp(2rem, 1.855rem + 0.73vw, 2.4rem);
         font-weight: 700;
+        margin-top: 24px;
       }
       .work-position{
         text-align: center;
@@ -230,16 +231,19 @@ header{
         }
         .work-link-wrap{
           margin-top: 80px;
-          width: 320px;
-          background-color: #333;
-          border: solid 2px #333;
-          transition:  ease .2s;
+          display: flex;
+          justify-content: center;
           a{
+            width: 320px;
+            height: 64px;
+            background-color: #333;
+            border: solid 2px #333;
+            transition:  ease .2s;
+            border-radius: 8px;
             position: relative;
             display: block;
-            width: 100%;
             font-size: 1.4rem;
-            line-height: 40px;
+            line-height: 64px;
             color: white;
             text-align: center;
             text-decoration: none;
@@ -252,13 +256,27 @@ header{
               transform: translateY(-50%);
               font-family: "Material Icons";
               content: "\e89e";
+              font-size: 2rem;
             }
-          }
-          &:hover{
-            background-color: rgb(250, 250, 250,0.9);
-            border: solid 2px #333;
-            a{
+            &::after{
+              position: absolute;
+              bottom: 0;
+              content: "";
+              display: block;
+              width: 100%;
+              height: 100%;
+              background-color: #333;
+              z-index: -1;
+              transition:  ease .2s;
+              border-radius:4px;
+            }
+            &:hover{
+              background-color: #fff;
+              border: solid 2px #333;
               color: #333;
+              &::after{
+                transform: translate(10px,10px);
+              }
             }
           }
         }

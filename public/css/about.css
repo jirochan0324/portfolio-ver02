@@ -830,43 +830,19 @@ header #m-nav.m-nav-open ul {
   font-weight: 500;
 }
 #profile .fv-song-wrap .fv-song-content {
-  margin-top: 80px;
-  height: 355px;
-  width: 100%;
-  max-width: 1220px;
-  position: relative;
-}
-#profile .fv-song-wrap .fv-song-content .fv-song-list {
-  width: 100%;
-  position: absolute;
-  top: 0;
+  margin-top: 40px;
   display: flex;
-  flex-wrap: wrap;
-  opacity: 1;
-  transition: 2s ease;
-  z-index: 2;
 }
-#profile .fv-song-wrap .fv-song-content .fv-song-list .fv-song-text-wrap {
-  margin: 0 auto;
+#profile .fv-song-wrap .fv-song-content .song-change-wrap {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
 }
-#profile .fv-song-wrap .fv-song-content .fv-song-list .fv-song-text-wrap .fv-song-name {
-  color: #333;
-  font-size: clamp(2.4rem, 2.182rem + 1.09vw, 3rem);
-  transition-duration: 2s;
-  padding: 16px 0px;
-  line-height: 1.5;
-}
-#profile .fv-song-wrap .fv-song-content .fv-song-list .fv-song-text-wrap .fv-song-name .br {
-  display: none;
-}
-#profile .fv-song-wrap .fv-song-content .fv-song-list .fv-song-text-wrap .fv-song-text {
-  font-size: 1.6rem;
-  line-height: 2;
-  color: #7f7f7f;
-}
-#profile .fv-song-wrap .fv-song-content .fv-song-list.active {
-  opacity: 0;
-  z-index: 1;
+#profile .fv-song-wrap .fv-song-content .song-change-wrap .song-change {
+  font-size: 1.4rem;
+  padding: 12px;
+  border: solid #333 2px;
+  margin-bottom: 24px;
 }
 #profile .fv-song-wrap .song-border-second {
   margin-top: 20px;

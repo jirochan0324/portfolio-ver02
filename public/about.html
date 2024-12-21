@@ -15,7 +15,7 @@
 </head>
 <body>
 
-  <div id="loading">
+  <!-- <div id="loading">
     <div class="loading-wrap">
       <dotlottie-player src="https://lottie.host/6c09d1c0-3e27-4bc1-8ff5-7c526aabb0bf/C2Qi3qRtQX.json" background="transparent" speed="1" loop autoplay class="loading-logo"></dotlottie-player>
       <p class="loading-text-wrarp loading-text-wrarp-position">
@@ -31,7 +31,7 @@
         <span class="loading-text">.</span>
       </p>
     </div>
-  </div>
+  </div> -->
 
 
   <header>
@@ -191,7 +191,7 @@
             <p class="prorile-text-body">
               <span class="profile-text">2021年4月 ECCコンピュータ専門学校　WEBデザインコースに入学。</span>
               <span class="line"></span>
-            </p>
+            </p> 
             <p class="prorile-text-body">
               <span class="profile-text">WEBデザイナーを目指し、コーディングやデザインについて学ぶ。</span>
               <span class="line"></span>
@@ -208,6 +208,11 @@
             </p>
             <p class="prorile-text-body">
               <span class="profile-text">自分のスキルが磨かれている事に日々「喜び」「やりがい」「成長」を感じている。</span>
+              <span class="line"></span>
+            </p>
+            <br>
+            <p class="prorile-text-body">
+              <span class="profile-text">クオリティの高いWEBサイトを制作できるよう、現在のスキルに満足せず日々スキルを磨き続けている。1</span>
               <span class="line"></span>
             </p>
           </div>
@@ -276,13 +281,12 @@
         <div class="policy-body">
             <h3 class="head3">Words to Live By</h3>
             <div class="my-policy-wrap">
-              <h4 class="my-policy">投げ出したい時こそ、<br class="br"> 大きく変わる時さ、<br>そこにきっとチャンスはあるから</h4>
+              <h4 class="my-policy">「好きこそ物の上手なれ」<br>「下手の横好き」</h4>
             </div>
             <div class="my-policy-text-wrap">
               <p class="my-policy-text">
-                私が好きな曲の歌詞です。<br>
-                困難にぶつかった時、いつもこの歌詞を思い出して乗り越えてきました。<br>
-                今も、これからも、困難は成長の過程であることを意識して、成長していきます。
+                好きなことが好き。好きだから無闇に続けてしまう。<br>
+                好きなことに対する自分の頑固な性格を表す言葉であり、好きだと思った時に対して必ず意識している言葉です。<br>
               </p>
             </div>
         </div>
@@ -290,34 +294,12 @@
       <div class="fv-song-wrap">
         <h3 class="head3">This is my favorite song</h3>
         <div class="fv-song-content">
-            <div class="fv-song-list">
-              <div class="song-link">
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3BDVbNDjDPnnR4BFYkTorb?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-              </div>
-              <div class="fv-song-text-wrap">
-                <h4 class="fv-song-name">どんなときもずっと</h4>
-                <p class="fv-song-text">
-                  私が好きな曲の歌詞です。<br>
-                  困難にぶつかった時、いつもこの歌詞を思い出して乗り越えてきました。<br>
-                  今も、これからも、困難は成長の過程であることを意識して、成長していきます。
-                </p>
-              </div>
-            </div>
-            <div class="fv-song-list">
-              <div class="song-link">
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2zrhoHlFKxFTRF5aMyxMoQ?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-              </div>
-              <div class="fv-song-text-wrap">
-                <h4 class="fv-song-name">どんなときもずっと</h4>
-                <p class="fv-song-text">
-                  私が好きな曲の歌詞です。<br>
-                  困難にぶつかった時、いつもこの歌詞を思い出して乗り越えてきました。<br>
-                  今も、これからも、困難は成長の過程であることを意識して、成長していきます。
-                </p>
-              </div>
-            </div>
-
-
+          <div class="song-link" id="embed-iframe"></div>
+          <div class="song-change-wrap">
+            <button class="song-change" data-spotify-id="spotify:intl-ja:track:2zrhoHlFKxFTRF5aMyxMoQ?utm_source=generator">My Path to Spotify: Women in Engineering</button>
+            <button class="song-change" data-spotify-id="spotify:intl-ja:track:3BDVbNDjDPnnR4BFYkTorb?si=bbea4cbbc38749f6">What is Backstage?</button>
+            <button class="song-change" data-spotify-id="spotify:intl-ja:track:320t6FGS5vJ05SSKSEvdsl?si=2e3162cda10c450b">Introducing Nerd Out@Spotify</button>
+          </div>
         </div>
         <div class="song-border-second">
           <div class="border-second"></div>
@@ -384,9 +366,16 @@
   <div id="stalker"></div>
   <!-- カーソルデザイン -->
 
+  <!-- loading-json -->
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+  <!-- spotify-api -->
+  <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+
+  <!-- 自作Jsファイル -->
   <script src="js/loading.js"></script>
   <script src="js/cursole.js"></script>
   <script src="js/about-page.js"></script>
-  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+  <script src="js/about-page-spotify.js"></script>
+
 </body>
 </html>

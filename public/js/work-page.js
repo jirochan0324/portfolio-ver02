@@ -10,7 +10,9 @@ filterButtons.forEach((filterButton) => {
 function buttonSwitch() {
   filterButtons.forEach((filterButton) => {
     filterButton.classList.remove("is-active");
+    filterButton.classList.remove("active");
     this.classList.add('is-active');
+    this.classList.add('active');
   });
 }
 
@@ -41,3 +43,4 @@ function categoryFilter() {
     }
   });
 }
+
