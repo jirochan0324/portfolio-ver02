@@ -15,7 +15,6 @@
     max-width: 1140px;
     min-width: 240px;
     width: 100%;
-
     svg {
       width: 100%;
 
@@ -45,6 +44,7 @@
 
       .fv-job{
         opacity: 0;
+        font-family: "Zen Kurenaido";
       }
       .fv-job.fv-job-animation {
         animation-name: fv-job-fadein;
@@ -167,9 +167,9 @@ section {
   padding: 120px 24px;
   .head2 {
     font-family: "Zen Kurenaido";
+    letter-spacing: 0.05em;
     text-align: center;
     font-size: clamp(3rem, 2.273rem + 3.64vw, 5rem);
-    letter-spacing: 0.05em;
     padding-bottom: 80px;
   }
   .skill-name{
