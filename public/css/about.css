@@ -575,7 +575,7 @@ header #m-nav.m-nav-open ul {
   position: absolute;
   left: 14px;
   height: 1px;
-  background-color: black;
+  background-color: #333;
   width: 45%;
 }
 .menu span:nth-of-type(1) {
@@ -589,7 +589,7 @@ header #m-nav.m-nav-open ul {
 }
 
 .menu.active span {
-  background-color: white;
+  background-color: #333;
 }
 .menu.active span:nth-of-type(1) {
   top: 18px;

@@ -461,49 +461,22 @@ header {
   width: 100%;
   z-index: 999;
 }
-header li {
-  list-style: none;
-  text-align: center;
-  padding: 10px;
+header .logo-img {
+  position: fixed;
+  top: 0;
+  left: 32px;
+  height: 80px;
+  z-index: 1;
 }
-header li a {
-  text-decoration: none;
-  color: #333;
-  padding: 0px 32px;
-  font-size: 1.4rem;
-  position: relative;
-}
-header li a::after {
-  content: "";
+header .logo-img img {
   display: block;
-  width: 80%;
-  height: 2px;
-  background-color: #333;
-  position: absolute;
-  bottom: -4px;
-  left: 10%;
-  transform: scale(0, 1);
-  transition: all 0.3s;
-}
-header li:hover a::after {
-  transform: scale(1, 1);
+  height: 80px;
 }
 header #g-nav {
-  overflow-x: hidden;
   position: fixed;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  width: 100%;
-  height: 80px;
-}
-header #g-nav .logo-img {
-  height: 80px;
-  margin-right: auto;
-  margin-left: 60px;
-}
-header #g-nav .logo-img img {
-  display: block;
   width: 100%;
   height: 80px;
 }
@@ -514,6 +487,22 @@ header #g-nav ul {
   align-items: center;
   list-style: none;
 }
+header #g-nav ul li {
+  list-style: none;
+  text-align: center;
+  margin-right: 32px;
+}
+header #g-nav ul li a {
+  padding: 0px 16px;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.4rem;
+  position: relative;
+  transition: all 0.3s;
+}
+header #g-nav ul li:hover a {
+  color: #949cc7;
+}
 header #m-nav {
   overflow-y: hidden;
   position: fixed;
@@ -523,8 +512,8 @@ header #m-nav {
   opacity: 0;
   visibility: hidden;
   z-index: 999;
-  background-color: rgb(85, 85, 85);
   transition: all 0.3s;
+  background: rgb(255, 255, 255);
 }
 header #m-nav ul {
   display: none;
@@ -533,11 +522,24 @@ header #m-nav ul {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-header #m-nav ul li a {
-  color: white;
+header #m-nav ul li {
+  list-style: none;
+  text-align: center;
+  margin-right: 0px;
+  margin-top: 16px;
+  padding: 8px;
 }
-header #m-nav ul li a::after {
-  background-color: white;
+header #m-nav ul li a {
+  padding: 0px 16px;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.4rem;
+  position: relative;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+header #m-nav ul li:hover a {
+  color: #949cc7;
 }
 header #m-nav.m-nav-open {
   opacity: 1;
@@ -573,7 +575,7 @@ header #m-nav.m-nav-open ul {
   position: absolute;
   left: 14px;
   height: 1px;
-  background-color: black;
+  background-color: #333;
   width: 45%;
 }
 .menu span:nth-of-type(1) {
@@ -587,7 +589,7 @@ header #m-nav.m-nav-open ul {
 }
 
 .menu.active span {
-  background-color: white;
+  background-color: #333;
 }
 .menu.active span:nth-of-type(1) {
   top: 18px;
@@ -607,6 +609,7 @@ header #m-nav.m-nav-open ul {
 
 #work {
   margin-top: 80px;
+  padding: 0px 24px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -629,8 +632,8 @@ header #m-nav.m-nav-open ul {
   object-fit: contain;
 }
 #work .work-wrap .work-head {
-  width: 90%;
-  max-width: 960px;
+  width: 100%;
+  max-width: 1120px;
   min-width: 320px;
 }
 #work .work-wrap .work-head h1 {
@@ -656,9 +659,6 @@ header #m-nav.m-nav-open ul {
 }
 #work .work-wrap .work-head .work-body .work-body-content {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: flex-start;
 }
 #work .work-wrap .work-head .work-body .work-body-content:not(:first-child) {
   margin-top: 20px;
@@ -670,8 +670,6 @@ header #m-nav.m-nav-open ul {
   font-weight: 700;
 }
 #work .work-wrap .work-head .work-body .work-body-content .work-body-item {
-  width: 100%;
-  max-width: 800px;
   font-size: 1.6rem;
   letter-spacing: 0.05em;
 }
@@ -726,12 +724,26 @@ header #m-nav.m-nav-open ul {
 #work .work-wrap .work-head .work-body .work-link-wrap a:hover::after {
   transform: translate(10px, 10px);
 }
-#work .work-wrap .work-head .work-exp {
+#work .work-wrap .work-design {
   margin-top: 80px;
+  width: 100%;
+  max-width: 1120px;
+  min-width: 320px;
 }
-#work .work-wrap .work-head .work-exp .work-exp-head {
-  font-size: 2rem;
+#work .work-wrap .work-design .work-design-head {
+  font-family: "Zen Kurenaido";
+  font-size: clamp(2rem, 1.273rem + 3.64vw, 4rem);
   padding: 20px 0px;
+}
+#work .work-wrap .work-design .design-list {
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+}
+#work .work-wrap .work-design .design-list .design-item {
+  width: 100%;
+  max-width: 420px;
+  min-width: 320px;
 }
 
 #footer {

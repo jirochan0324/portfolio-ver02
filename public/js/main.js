@@ -70,7 +70,7 @@ menuActive.addEventListener('click',()=>{
     // width>800pxの場合、mobileNavから.mobile-navを削除
     window.addEventListener('resize',()=>{
     const winWidth=window.innerWidth;
-    if(winWidth>800){
+    if(winWidth>720){
         menuActive.classList.remove('active');
         mobileNav.classList.remove('m-nav-open');
     }
