@@ -25,6 +25,23 @@ fripImg.addEventListener("mouseout",()=>{
 });
 
 window.addEventListener('scroll',()=>{
+    const sectionFadeIn=document.querySelectorAll('.work-fade-in-wrap');
+    for (let i = 0; i < sectionFadeIn.length; i++) {
+        const secFadeIn = sectionFadeIn[i];
+        var sectionFadeInTop=secFadeIn.offsetTop;
+        if(window.scrollY + 640 > sectionFadeInTop){
+            const sectionFadeInItem=document.querySelectorAll('.section-fade-in-item');
+            for (let i = 0; i < sectionFadeInItem.length; i++) {
+                const secFadeInItem=sectionFadeInItem[i];
+                if(window.scrollY + 640 > sectionFadeInTop){
+                    setTimeout(() => {
+                        secFadeInItem.classList.add('active');
+                    }, i * 200);
+                }
+            }
+        }
+    };
+
     const carrier= document.querySelector('.carrier');
     var carrierTop=carrier.offsetTop;
     if(window.scrollY + 480 > carrierTop){
@@ -60,6 +77,7 @@ window.addEventListener('scroll',()=>{
         }
     };
 });
+
 
 
 // fv-song-fadein-
