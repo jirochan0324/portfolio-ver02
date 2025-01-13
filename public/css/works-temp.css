@@ -470,7 +470,7 @@ header #g-nav {
   padding: 24px 24px 0px 24px;
   height: 100px;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1140px;
 }
 header #g-nav .logo-img {
   z-index: 1;
@@ -733,18 +733,25 @@ header #m-nav.m-nav-open ul {
 }
 #work .work-wrap .work-design .work-design-head {
   font-family: "Zen Kurenaido";
-  font-size: clamp(2rem, 1.273rem + 3.64vw, 4rem);
-  padding: 20px 0px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  font-size: clamp(3rem, 2.273rem + 3.64vw, 5rem);
+  padding-bottom: 80px;
 }
 #work .work-wrap .work-design .design-list {
   width: 100%;
   list-style-type: none;
   display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 #work .work-wrap .work-design .design-list .design-item {
   width: 100%;
   max-width: 420px;
   min-width: 320px;
+}
+#work .work-wrap .work-design .design-list .design-item .design-img {
+  width: 100%;
 }
 
 #footer {

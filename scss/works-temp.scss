@@ -123,17 +123,24 @@
       min-width: 320px;
       .work-design-head{
         font-family: "Zen Kurenaido";
-        font-size: clamp(2rem, 1.273rem + 3.64vw, 4rem);
-        padding: 20px 0px;
+        letter-spacing: 0.05em;
+        text-align: center;
+        font-size: clamp(3rem, 2.273rem + 3.64vw, 5rem);
+        padding-bottom: 80px;
       }
       .design-list{
         width: 100%;
         list-style-type: none;
         display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
         .design-item{
           width: 100%;
           max-width: 420px;
           min-width: 320px;
+          .design-img{
+            width: 100%;
+          }
         }
       }
     }
