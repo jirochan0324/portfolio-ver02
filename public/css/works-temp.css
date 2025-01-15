@@ -747,10 +747,16 @@ header #m-nav.m-nav-open ul {
 }
 #work .work-wrap .work-design .design-list .design-item {
   width: 100%;
-  max-width: 420px;
-  min-width: 320px;
+  max-width: 400px;
 }
 #work .work-wrap .work-design .design-list .design-item .design-img {
+  width: 100%;
+}
+#work .work-wrap .work-design .design-list .design-ui {
+  width: 100%;
+  max-width: 280px;
+}
+#work .work-wrap .work-design .design-list .design-ui .design-img {
   width: 100%;
 }
 
