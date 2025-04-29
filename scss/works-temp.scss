@@ -134,16 +134,16 @@
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
+        .design-text-wrap{
+          width: 100%;
+          max-width: 640px;
+          .design-text{
+            font-size: 1.8rem;
+          }
+        }
         .design-item{
           width: 100%;
           max-width: 400px;
-          .design-img{
-            width: 100%;
-          }
-        }
-        .design-ui{
-          width: 100%;
-          max-width: 280px;
           .design-img{
             width: 100%;
           }
@@ -190,4 +190,15 @@
     display: flex;
   }
 
+  #work{
+    .work-wrap{
+      .work-design{
+        .design-list{
+          .design-item{
+            margin-bottom: 32px;
+          }
+        }
+      }
+    }
+  }
 }
